@@ -36,6 +36,9 @@
     },
     "cordova-plugin-vibration": {
       "PACKAGE_NAME": "com.yuhu.id"
+    },
+    "cordova-plugin-bluetooth-serial": {
+      "PACKAGE_NAME": "com.yuhu.id"
     }
   },
   "dependent_plugins": {
