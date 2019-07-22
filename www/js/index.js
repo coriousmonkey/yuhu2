@@ -47,9 +47,11 @@ var app = {
 
             alert(JSON.stringify(devices[0]));
 
+            alert(devices[0].address);
+            alert(devices[0].uuids[0]);
+
             networking.bluetooth.connect(devices[0].address, devices[0].uuids[0], function (socketId) {
-                alert(devices[0].address);
-                alert(devices[0].uuids[0]);
+
                 var str = "Hello竜";
                 var bytes = []; // char codes
                 var bytesv2 = []; // char codes
