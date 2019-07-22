@@ -1,0 +1,46 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-battery-status": {
+      "PACKAGE_NAME": "com.yuhu.id"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.yuhu.id"
+    },
+    "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "com.yuhu.id"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.yuhu.id"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.yuhu.id"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.yuhu.id"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.yuhu.id"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.yuhu.id"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.yuhu.id"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.yuhu.id"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.yuhu.id"
+    }
+  }
+}
