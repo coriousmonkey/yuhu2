@@ -1,0 +1,17 @@
+{
+  "name": "com.yuhu.id",
+  "version": "1.0.0",
+  "displayName": "yuhu2",
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-networking-bluetooth": {}
+    }
+  },
+  "dependencies": {
+    "cordova-android": "~7.1.4",
+    "cordova-plugin-networking-bluetooth": "1.0.3"
+  }
+}

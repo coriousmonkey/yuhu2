@@ -35,25 +35,47 @@ var app = {
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
 
-        bluetoothSerial.list(function (devices) {
-            devices.forEach(function (device) {
-                bluetoothSerial.connect(device.id, function(con){
-                    
-                    bluetoothSerial.write("hello, world", function(){
-                        
-                    }, function(err3){
-                        alert(err3);
-                        alert(JSON.stringify(err3));
-                    });
-                    
-                }, function(err2){a
-                    alert(err2);
-                    alert(JSON.stringify(err2))
+        networking.bluetooth.getDevices(function (devices) {
+            for (var i = 0; i < devices.length; i++) {
+                // The deviceInfo object has the following properties:
+                // address: String --> The address of the device, in the format 'XX:XX:XX:XX:XX:XX'.
+                // name: String --> The human-readable name of the device.
+                // paired: Boolean --> Indicates whether or not the device is paired with the system.
+                // uuids: Array of String --> UUIDs of protocols, profiles and services advertised by the device.
+                console.log(devices[i].address);
+            }
+
+            alert(JSON.stringify(devices[0]));
+
+            networking.bluetooth.connect(devices[0].address, devices[0].uuids[0], function (socketId) {
+
+
+                var str = "Hello竜";
+                var bytes = []; // char codes
+                var bytesv2 = []; // char codes
+                var arrayBuffer = [];
+
+                for (var i = 0; i < str.length; ++i) {
+                    var code = str.charCodeAt(i);
+
+                    bytes = bytes.concat([code]);
+
+                    bytesv2 = bytesv2.concat([code & 0xff, code / 256 >>> 0]);
+                }
+
+                $('#alert').html('');
+
+                networking.bluetooth.send(socketId, bytes, function (bytes_sent) {
+//                    alert('Sent ' + bytes_sent + ' bytes');
+                    $('#alert').append(bytes_sent);
+                }, function (errorMessage) {
+                    alert('Send failed: ' + errorMessage);
                 });
+
+
+            }, function (errorMessage) {
+                console.log('Connection failed: ' + errorMessage);
             });
-        }, function (err) {
-            alert(err);
-            alert(JSON.stringify(err));
         });
 
 
