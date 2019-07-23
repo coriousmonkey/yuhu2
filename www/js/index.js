@@ -52,9 +52,9 @@ var app = {
 
             networking.bluetooth.connect(devices[0].address, devices[0].uuids[0], function (socketId) {
 
-                var arr_bytes=[];
+                var arr_bytes = [];
 
-                arr_bytes=[10, 104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 10];
+                arr_bytes = [10, 104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 10];
 
 
                 $('#alert').html('');
@@ -65,6 +65,7 @@ var app = {
                 }, function (errorMessage) {
                     alert('Send failed: ' + errorMessage);
                 });
+
 
 
             }, function (errorMessage) {
