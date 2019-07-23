@@ -55,12 +55,7 @@ var app = {
 
 //                var arr_bytes = [];
 
-                var arr_bytes = new Uint8Array(4);
-                arr_bytes[0] = 0x41;
-                arr_bytes[1] = 0x42;
-                arr_bytes[2] = 0x43;
-                arr_bytes[3] = 0x44;
-
+                var arr_bytes = [10, 32, 104, 101, 108, 108, 111, 32, 10];
 
 
                 networking.bluetooth.send(socketId, arr_bytes, function (bytes_sent) {
