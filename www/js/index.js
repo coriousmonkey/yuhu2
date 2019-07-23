@@ -55,13 +55,13 @@ var app = {
 
 //                var arr_bytes = [];
 
-                var arr_bytes = [0x0d,0x0a,0x68, 0x65, 0x6c,0x6c,0x6f,0x0d,0x0a];
+                var arr_bytes = [186, 220, 222];
 
 
                 networking.bluetooth.send(socketId, arr_bytes, function (bytes_sent) {
 //                    alert('Sent ' + bytes_sent + ' bytes');
-
-                    alllert.val( alllert.val()+ "," + bytes_sent );
+                    var deff=alllert.val();
+                    alllert.val( deff  + "," + bytes_sent );
                 }, function (errorMessage) {
                     alert('Send failed: ' + errorMessage);
                 });
