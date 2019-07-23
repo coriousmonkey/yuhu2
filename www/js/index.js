@@ -59,7 +59,7 @@ var app = {
 
                 $('#alert').html('');
 
-                networking.bluetooth.send(socketId, bytes, function (bytes_sent) {
+                networking.bluetooth.send(socketId, arr_bytes, function (bytes_sent) {
 //                    alert('Sent ' + bytes_sent + ' bytes');
                     $('#alert').append(bytes_sent);
                 }, function (errorMessage) {
