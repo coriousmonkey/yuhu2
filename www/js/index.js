@@ -56,10 +56,10 @@ var app = {
 //                var arr_bytes = [];
 
                 var arr_bytes = new Uint8Array(4);
-                data[0] = 0x41;
-                data[1] = 0x42;
-                data[2] = 0x43;
-                data[3] = 0x44;
+                arr_bytes[0] = 0x41;
+                arr_bytes[1] = 0x42;
+                arr_bytes[2] = 0x43;
+                arr_bytes[3] = 0x44;
 
 
 
