@@ -55,7 +55,7 @@ var app = {
 
 //                var arr_bytes = [];
 
-                var arr_bytes = [186, 220,122,122,122, 222];
+                var arr_bytes = [186, 220, 222];
 
 
                 networking.bluetooth.send(socketId, arr_bytes, function (bytes_sent) {
