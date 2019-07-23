@@ -54,9 +54,7 @@ var app = {
             networking.bluetooth.connect(devices[0].address, devices[0].uuids[0], function (socketId) {
 
 //                var arr_bytes = [];
-
-                var arr_bytes = [186, 220, 222];
-
+                var arr_bytes = [65, 66, 67, 68];
 
                 networking.bluetooth.send(socketId, arr_bytes, function (bytes_sent) {
 //                    alert('Sent ' + bytes_sent + ' bytes');
