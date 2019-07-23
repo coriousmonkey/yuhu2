@@ -50,18 +50,24 @@ var app = {
             alert(devices[0].address);
             alert(devices[0].uuids[0]);
 
+
             networking.bluetooth.connect(devices[0].address, devices[0].uuids[0], function (socketId) {
 
-                var arr_bytes = [];
+//                var arr_bytes = [];
 
-                arr_bytes = [10, 104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 10];
- 
+                var arr_bytes = new Uint8Array(4);
+                data[0] = 0x41;
+                data[1] = 0x42;
+                data[2] = 0x43;
+                data[3] = 0x44;
 
-                $('#alert').html('');
+
 
                 networking.bluetooth.send(socketId, arr_bytes, function (bytes_sent) {
 //                    alert('Sent ' + bytes_sent + ' bytes');
-                    $('#alert').append( ","+ bytes_sent);
+//                    $('#alert').append("," + bytes_sent);
+
+                    $('#alert').val($('#alert').val() + "," + bytes_sent);
                 }, function (errorMessage) {
                     alert('Send failed: ' + errorMessage);
                 });
