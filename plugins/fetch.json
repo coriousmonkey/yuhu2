@@ -95,10 +95,10 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-networking-bluetooth": {
+  "cordova-plugin-bluetooth-serial": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-networking-bluetooth"
+      "id": "cordova-plugin-bluetooth-serial"
     },
     "is_top_level": true,
     "variables": {}

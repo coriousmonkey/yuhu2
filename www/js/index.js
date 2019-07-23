@@ -35,45 +35,7 @@ var app = {
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
 
-        networking.bluetooth.getDevices(function (devices) {
-            for (var i = 0; i < devices.length; i++) {
-                // The deviceInfo object has the following properties:
-                // address: String --> The address of the device, in the format 'XX:XX:XX:XX:XX:XX'.
-                // name: String --> The human-readable name of the device.
-                // paired: Boolean --> Indicates whether or not the device is paired with the system.
-                // uuids: Array of String --> UUIDs of protocols, profiles and services advertised by the device.
-                console.log(devices[i].address);
-            }
-
-            alert(JSON.stringify(devices[0]));
-
-            alert(devices[0].address);
-            alert(devices[0].uuids[0]);
-
-            alllert=$('#alert');
-            networking.bluetooth.connect(devices[0].address, devices[0].uuids[0], function (socketId) {
-
-//                var arr_bytes = [];
-                var arr_bytes = new Uint8Array(4);
-                arr_bytes[0] = 0x41;
-                arr_bytes[1] = 0x42;
-                arr_bytes[2] = 0x43;
-                arr_bytes[3] = 0x44;
-
-                networking.bluetooth.send(socketId, arr_bytes, function (bytes_sent) {
-//                    alert('Sent ' + bytes_sent + ' bytes');
-                    var deff=alllert.val();
-                    alllert.val( deff  + "," + bytes_sent );
-                }, function (errorMessage) {
-                    alert('Send failed: ' + errorMessage);
-                });
-
-
-
-            }, function (errorMessage) {
-                alert('Connection failed: ' + errorMessage);
-            });
-        });
+        
 
 
     },
