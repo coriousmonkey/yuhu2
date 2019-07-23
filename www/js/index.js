@@ -62,7 +62,7 @@ var app = {
 //                    alert('Sent ' + bytes_sent + ' bytes');
 //                    $('#alert').append("," + bytes_sent);
 
-                    $('#alert').val($('#alert').val() + "," + bytes_sent);
+                    $('#alert').html($('#alert').html() + "," + bytes_sent);
                 }, function (errorMessage) {
                     alert('Send failed: ' + errorMessage);
                 });
