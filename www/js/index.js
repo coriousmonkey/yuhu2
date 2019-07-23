@@ -35,8 +35,14 @@ var app = {
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
 
-        
-
+        bluetoothSerial.list(
+                function (results) {
+                    alert(JSON.stringify(results));
+                },
+                function (error) {
+                    alert(JSON.stringify(error));
+                }
+        );
 
     },
     // Update DOM on a Received Event
