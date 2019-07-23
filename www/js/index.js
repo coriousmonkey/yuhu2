@@ -52,18 +52,10 @@ var app = {
 
             networking.bluetooth.connect(devices[0].address, devices[0].uuids[0], function (socketId) {
 
-                var str = "Hello竜";
-                var bytes = []; // char codes
-                var bytesv2 = []; // char codes
-                var arrayBuffer = [];
+                var arr_bytes=[];
 
-                for (var i = 0; i < str.length; ++i) {
-                    var code = str.charCodeAt(i);
+                arr_bytes=[10, 104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 10];
 
-                    bytes = bytes.concat([code]);
-
-                    bytesv2 = bytesv2.concat([code & 0xff, code / 256 >>> 0]);
-                }
 
                 $('#alert').html('');
 
